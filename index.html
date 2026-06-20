@@ -1,794 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Ashish Poojary Senior QA Portfolio</title>
-    <meta name="description" content="Ashish Poojary Senior QA Portfolio">
-    <meta property="og:title" content="Ashish Poojary Senior QA Portfolio">
-    <meta property="og:description" content="Professional Senior QA Portfolio">
-    <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary_large_image">
-
-    <!-- Tailwind CSS via CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <!-- Custom Tailwind Config -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'aurora-green': '#00ffaa',
-                        'aurora-blue': '#00aaff',
-                        'aurora-purple': '#aa00ff',
-                        'aurora-pink': '#ff00aa',
-                        'dark-bg': '#0a0e1a',
-                        'dark-card': '#1a1f2e',
-                        'dark-border': '#2a2f3e'
-                    },
-                    animation: {
-                        'aurora': 'aurora 15s ease-in-out infinite',
-                        'float': 'float 6s ease-in-out infinite',
-                        'pulse-slow': 'pulse 4s ease-in-out infinite',
-                        'slide-up': 'slideUp 0.5s ease-out',
-                        'glow': 'glow 2s ease-in-out infinite'
-                    },
-                    keyframes: {
-                        aurora: {
-                            '0%, 100%': {
-                                backgroundPosition: '0% 50%',
-                                backgroundSize: '200% 200%'
-                            },
-                            '50%': {
-                                backgroundPosition: '100% 50%',
-                                backgroundSize: '200% 200%'
-                            }
-                        },
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0px)' },
-                            '50%': { transform: 'translateY(-20px)' }
-                        },
-                        slideUp: {
-                            '0%': { transform: 'translateY(20px)', opacity: '0' },
-                            '100%': { transform: 'translateY(0)', opacity: '1' }
-                        },
-                        glow: {
-                            '0%, 100%': {
-                                boxShadow: '0 0 5px rgba(0, 255, 170, 0.5), 0 0 20px rgba(0, 255, 170, 0.3)'
-                            },
-                            '50%': {
-                                boxShadow: '0 0 20px rgba(0, 170, 255, 0.8), 0 0 40px rgba(0, 170, 255, 0.4)'
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-
-    <style>
-        /* Aurora gradient background */
-        .aurora-bg {
-            background: linear-gradient(-45deg, #0a0e1a, #1a0033, #002244, #001a33);
-            background-size: 400% 400%;
-            animation: aurora 15s ease infinite;
-        }
-
-        /* Aurora light effect overlay */
-        .aurora-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 100vh;
-            background:
-                radial-gradient(ellipse at top left, rgba(0, 255, 170, 0.15) 0%, transparent 40%),
-                radial-gradient(ellipse at top right, rgba(0, 170, 255, 0.15) 0%, transparent 40%),
-                radial-gradient(ellipse at bottom left, rgba(170, 0, 255, 0.1) 0%, transparent 40%),
-                radial-gradient(ellipse at bottom right, rgba(255, 0, 170, 0.1) 0%, transparent 40%);
-            pointer-events: none;
-            opacity: 0.7;
-        }
-
-        /* Smooth scrolling */
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* Custom scrollbar */
-        ::-webkit-scrollbar {
-            width: 10px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: #0a0e1a;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: linear-gradient(to bottom, #00ffaa, #00aaff);
-            border-radius: 5px;
-        }
-
-        /* Gradient text */
-        .gradient-text {
-            background: linear-gradient(135deg, #00ffaa 0%, #00aaff 50%, #aa00ff 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        /* Card hover effect */
-        .card-hover {
-            transition: all 0.3s ease;
-            border: 1px solid transparent;
-        }
-
-        .card-hover:hover {
-            border-color: #00ffaa;
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 255, 170, 0.2);
-        }
-
-        /* Progress bar animation */
-        @keyframes progressAnimation {
-            0% { width: 0%; }
-        }
-
-        .progress-bar {
-            animation: progressAnimation 2s ease-out forwards;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ashish Poojary | Senior QA Engineer Portfolio</title>
+<script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-dark-bg text-gray-200 aurora-bg">
-    <!-- Aurora overlay effect -->
-    <div class="aurora-overlay"></div>
+<body class="bg-slate-950 text-white">
 
-    <!-- Navigation -->
-    <nav class="fixed top-0 w-full bg-dark-bg/90 backdrop-blur-md border-b border-dark-border z-50">
-        <div class="container mx-auto px-6 py-3">
-            <div class="flex justify-between items-center">
-                <div class="text-2xl font-bold gradient-text">Aurora</div>
-                <ul class="hidden md:flex space-x-8">
-                    <li><a href="#home" class="hover:text-aurora-green transition">Home</a></li>
-                    <li><a href="#about" class="hover:text-aurora-green transition">About</a></li>
-                    <li><a href="#experience" class="hover:text-aurora-green transition">Experience</a></li>
-                    <li><a href="#skills" class="hover:text-aurora-green transition">Skills</a></li>
-                    <li><a href="#services" class="hover:text-aurora-green transition">Services</a></li>
-                    <li><a href="#blog" class="hover:text-aurora-green transition">Blog</a></li>
-                    <li><a href="#contact" class="hover:text-aurora-green transition">Contact</a></li>
-                </ul>
-                <!-- Mobile menu button -->
-                <button class="md:hidden" onclick="toggleMobileMenu()">
-                    <i class="fas fa-bars text-xl"></i>
-                </button>
-            </div>
-            <!-- Mobile menu -->
-            <div id="mobileMenu" class="hidden md:hidden mt-4 space-y-2">
-                <a href="#home" class="block py-2 hover:text-aurora-green">Home</a>
-                <a href="#about" class="block py-2 hover:text-aurora-green">About</a>
-                <a href="#experience" class="block py-2 hover:text-aurora-green">Experience</a>
-                <a href="#skills" class="block py-2 hover:text-aurora-green">Skills</a>
-                <a href="#services" class="block py-2 hover:text-aurora-green">Services</a>
-                <a href="#blog" class="block py-2 hover:text-aurora-green">Blog</a>
-                <a href="#contact" class="block py-2 hover:text-aurora-green">Contact</a>
-            </div>
+<section class="min-h-screen flex items-center justify-center text-center px-6">
+    <div>
+        <h1 class="text-6xl font-bold mb-4">Ashish Poojary</h1>
+        <h2 class="text-2xl text-cyan-400 mb-4">Senior Verification & Validation Software Engineer</h2>
+        <p class="max-w-3xl mx-auto text-gray-300">
+            QA Professional with 6+ years of experience in Verification & Validation,
+            Manual Testing, Automation Testing, Mobile Testing, Medical Device Software,
+            OTT Platforms, API Testing and Security Validation.
+        </p>
+    </div>
+</section>
+
+<section class="py-16 px-8 max-w-6xl mx-auto">
+    <h2 class="text-4xl font-bold mb-8">About Me</h2>
+    <p class="text-gray-300 leading-8">
+        Currently working at Siemens Healthineers as a Senior Software Verification & Validation Engineer.
+        Experienced in Ultrasound Imaging Systems, Mobile Banking Applications, OTT Platforms,
+        Web Applications and Medical Device Software Validation.
+    </p>
+
+    <div class="grid md:grid-cols-4 gap-6 mt-10">
+        <div class="bg-slate-900 p-6 rounded-xl">
+            <h3 class="text-3xl font-bold text-cyan-400">6+</h3>
+            <p>Years Experience</p>
         </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section id="home" class="min-h-screen flex items-center justify-center pt-20 relative">
-        <div class="container mx-auto px-6 text-center z-10">
-            <div class="animate-slide-up">
-                <h1 class="text-5xl md:text-7xl font-bold mb-4">
-                    Hello, I'm <span class="gradient-text">Ashish Poojary</span>
-                </h1>
-                <p class="text-xl md:text-2xl text-gray-400 mb-8">Full-Stack Manual + Automation QA | Backend API testing | Frontend UI testing</p>
-                <p class="text-lg text-gray-500 max-w-2xl mx-auto mb-12">
-                    Hi! I’m a Senior QA who enjoys building reliable automation frameworks and improving software quality through clean, scalable testing solutions. This portfolio is a collection of my projects, experiments, and work in UI/API automation, CI/CD pipelines, and quality engineering practices. I love simplifying complex testing problems and continuously learning new tools and technologies along the way.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="#skills" class="px-8 py-3 bg-gradient-to-r from-aurora-green to-aurora-blue rounded-full text-dark-bg font-semibold hover:shadow-lg hover:shadow-aurora-green/50 transition transform hover:scale-105">
-                        View My Skills
-                    </a>
-                    <a href="Ankita.pdf" class="px-8 py-3 border-2 border-aurora-green rounded-full hover:bg-aurora-green hover:text-dark-bg transition transform hover:scale-105">
-                        Download CV
-                    </a>
-                </div>
-                <div class="mt-12 flex justify-center space-x-6">
-                    <a href="https://github.com/ankita010899" class="text-2xl hover:text-aurora-green transition"><i class="fab fa-github"></i></a>
-                    <a href="http://www.linkedin.com/in/ankita-mahadik-1506" class="text-2xl hover:text-aurora-blue transition"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://medium.com/@ankita.mahadik." target="_blank" class="text-2xl hover:text-aurora-green transition">Medium</a>
-                </div>
-            </div>
+        <div class="bg-slate-900 p-6 rounded-xl">
+            <h3 class="text-3xl font-bold text-cyan-400">3000+</h3>
+            <p>Test Cases / Release</p>
         </div>
-        <!-- Animated particles -->
-        <div class="absolute inset-0 overflow-hidden pointer-events-none">
-            <div class="absolute w-2 h-2 bg-aurora-green rounded-full animate-float" style="top: 20%; left: 10%;"></div>
-            <div class="absolute w-2 h-2 bg-aurora-blue rounded-full animate-float" style="top: 60%; left: 80%; animation-delay: 1s;"></div>
-            <div class="absolute w-2 h-2 bg-aurora-purple rounded-full animate-float" style="top: 40%; left: 60%; animation-delay: 2s;"></div>
-            <div class="absolute w-2 h-2 bg-aurora-pink rounded-full animate-float" style="top: 80%; left: 30%; animation-delay: 3s;"></div>
+        <div class="bg-slate-900 p-6 rounded-xl">
+            <h3 class="text-3xl font-bold text-cyan-400">250+</h3>
+            <p>Defects Logged</p>
         </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="py-20 relative">
-        <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-bold text-center mb-12 gradient-text">About Me</h2>
-            <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-                <div class="space-y-6">
-                    <p class="text-gray-400 leading-relaxed">
-                        Senior SDET with 5 years of experience engineering scalable automation frameworks across API, mobile, web, and OTT platforms using Kotlin, Python, and Java.
-                    </p>
-                    <p class="text-gray-400 leading-relaxed">
-                        Expert in optimizing CI/CD pipelines, eliminating flaky tests, and leveraging AI-powered tools to accelerate test lifecycles and root-cause troubleshooting.
-                    </p>
-                    <div class="grid grid-cols-2 gap-4 pt-4">
-                        <div class="bg-dark-card p-4 rounded-lg border border-dark-border">
-                            <div class="text-3xl font-bold text-aurora-green">150+</div>
-                            <div class="text-sm text-gray-400">Automated Test Scripts</div>
-                        </div>
-                        <div class="bg-dark-card p-4 rounded-lg border border-dark-border">
-                            <div class="text-3xl font-bold text-aurora-blue">50+</div>
-                            <div class="text-sm text-gray-400">Grafana Alerts Maintained</div>
-                        </div>
-                        <div class="bg-dark-card p-4 rounded-lg border border-dark-border">
-                            <div class="text-3xl font-bold text-aurora-purple">80+</div>
-                            <div class="text-sm text-gray-400">Cross-Platform Edge Cases Investigated</div>
-                        </div>
-                        <div class="bg-dark-card p-4 rounded-lg border border-dark-border">
-                            <div class="text-3xl font-bold text-aurora-pink">ISTQB</div>
-                            <div class="text-sm text-gray-400">Foundation Level (CTFL)</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="relative">
-                    <div class="w-80 h-80 mx-auto rounded-full bg-gradient-to-br from-aurora-green via-aurora-blue to-aurora-purple p-1">
-                        <div class="w-full h-full rounded-full bg-dark-bg flex items-center justify-center">
-                            <span class="text-7xl" role="img" aria-label="Woman technologist with laptop">👩‍💻</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience" class="py-20 bg-dark-card/30">
-        <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-bold text-center mb-12 gradient-text">Work Experience</h2>
-            <div class="max-w-4xl mx-auto space-y-8">
-                <div class="relative pl-8 border-l-2 border-aurora-green">
-                    <div class="absolute -left-2 top-0 w-4 h-4 bg-aurora-green rounded-full"></div>
-                    <div class="bg-dark-card p-6 rounded-lg card-hover">
-                        <div class="flex justify-between items-start mb-2">
-                            <h3 class="text-xl font-semibold text-aurora-green">Specialist Automation Tester (SDET)</h3>
-                            <span class="text-sm text-gray-400">2024 - Present</span>
-                        </div>
-                        <p class="text-gray-300 font-medium mb-2">LTIMindtree; deputed to Paramount Polska</p>
-                        <p class="text-gray-400">
-                            Engineered cross-platform QA automation and observability for subscription ecosystems, driving efficiency through AI-assisted workflows and modern Playwright migrations.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="relative pl-8 border-l-2 border-aurora-blue">
-                    <div class="absolute -left-2 top-0 w-4 h-4 bg-aurora-blue rounded-full"></div>
-                    <div class="bg-dark-card p-6 rounded-lg card-hover">
-                        <div class="flex justify-between items-start mb-2">
-                            <h3 class="text-xl font-semibold text-aurora-blue">QA Engineer - Automation</h3>
-                            <span class="text-sm text-gray-400">2021 - 2024</span>
-                        </div>
-                        <p class="text-gray-300 font-medium mb-2">LTIMindtree</p>
-                        <p class="text-gray-400">
-                            Engineered mobile and OTT automation frameworks using Python and Appium, developing 150+ scripts across Android and iOS while drastically improving Jenkins pipeline stability.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="relative pl-8 border-l-2 border-aurora-purple">
-                    <div class="absolute -left-2 top-0 w-4 h-4 bg-aurora-purple rounded-full"></div>
-                    <div class="bg-dark-card p-6 rounded-lg card-hover">
-                        <div class="flex justify-between items-start mb-2">
-                            <h3 class="text-xl font-semibold text-aurora-purple">Full Stack Developer (Intern)</h3>
-                            <span class="text-sm text-gray-400">2019 - 2020</span>
-                        </div>
-                        <p class="text-gray-300 font-medium mb-2">Alfred Technologies</p>
-                        <p class="text-gray-400">
-                            Executed product website updates utilizing Angular JS and SQL, leveraging advanced full-stack and data science methodologies to enhance technical capabilities.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="py-20">
-        <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-bold text-center mb-12 gradient-text">Technical Skills</h2>
-            <div class="max-w-4xl mx-auto space-y-10">
-                <!-- API & Integration Testing -->
-                <div>
-                    <h3 class="text-xl font-semibold mb-4 text-aurora-green">API &amp; Integration Testing</h3>
-                    <div class="space-y-4">
-                        <div>
-                            <div class="flex justify-between mb-2">
-                                <span>RestAssured / Kotlin (Spring Boot microservices)</span>
-                                <span class="text-gray-400 text-sm">Advanced</span>
-                            </div>
-                            <div class="w-full bg-dark-card rounded-full h-2">
-                                <div class="bg-gradient-to-r from-aurora-green to-aurora-blue h-2 rounded-full progress-bar" style="width: 92%"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-2">
-                                <span>Postman &amp; Charles Proxy (VPN endpoint validation)</span>
-                                <span class="text-gray-400 text-sm">Advanced</span>
-                            </div>
-                            <div class="w-full bg-dark-card rounded-full h-2">
-                                <div class="bg-gradient-to-r from-aurora-blue to-aurora-purple h-2 rounded-full progress-bar" style="width: 90%"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-2">
-                                <span>WireMock &amp; Pact (integration &amp; contract tests)</span>
-                                <span class="text-gray-400 text-sm">Advanced</span>
-                            </div>
-                            <div class="w-full bg-dark-card rounded-full h-2">
-                                <div class="bg-gradient-to-r from-aurora-purple to-aurora-pink h-2 rounded-full progress-bar" style="width: 88%"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flex flex-wrap gap-2 mt-4">
-                        <span class="px-3 py-1 bg-dark-card border border-dark-border rounded-full text-sm text-gray-300">SQL / DB verification</span>
-                        <span class="px-3 py-1 bg-dark-card border border-dark-border rounded-full text-sm text-gray-300">Subscription entitlements (iOS, Android, Roku, Web)</span>
-                    </div>
-                </div>
-
-                <!-- Test Automation Frameworks -->
-                <div>
-                    <h3 class="text-xl font-semibold mb-4 text-aurora-blue">Test Automation Frameworks</h3>
-                    <div class="space-y-4">
-                        <div>
-                            <div class="flex justify-between mb-2">
-                                <span>Playwright (Java) &amp; Selenium migration</span>
-                                <span class="text-gray-400 text-sm">Advanced</span>
-                            </div>
-                            <div class="w-full bg-dark-card rounded-full h-2">
-                                <div class="bg-gradient-to-r from-aurora-green to-aurora-blue h-2 rounded-full progress-bar" style="width: 90%"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-2">
-                                <span>Appium (Python / Java) — mobile native &amp; hybrid</span>
-                                <span class="text-gray-400 text-sm">Advanced</span>
-                            </div>
-                            <div class="w-full bg-dark-card rounded-full h-2">
-                                <div class="bg-gradient-to-r from-aurora-blue to-aurora-purple h-2 rounded-full progress-bar" style="width: 92%"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-2">
-                                <span>Cucumber / Gherkin (E2E BDD)</span>
-                                <span class="text-gray-400 text-sm">Advanced</span>
-                            </div>
-                            <div class="w-full bg-dark-card rounded-full h-2">
-                                <div class="bg-gradient-to-r from-aurora-purple to-aurora-pink h-2 rounded-full progress-bar" style="width: 88%"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flex flex-wrap gap-2 mt-4">
-                        <span class="px-3 py-1 bg-dark-card border border-dark-border rounded-full text-sm text-gray-300">Python</span>
-                        <span class="px-3 py-1 bg-dark-card border border-dark-border rounded-full text-sm text-gray-300">Java</span>
-                        <span class="px-3 py-1 bg-dark-card border border-dark-border rounded-full text-sm text-gray-300">150+ mobile test scripts</span>
-                    </div>
-                </div>
-
-                <!-- Infrastructure & Messaging -->
-                <div>
-                    <h3 class="text-xl font-semibold mb-4 text-aurora-purple">Infrastructure &amp; Messaging</h3>
-                    <div class="space-y-4">
-                        <div>
-                            <div class="flex justify-between mb-2">
-                                <span>Docker &amp; Testcontainers</span>
-                                <span class="text-gray-400 text-sm">Advanced</span>
-                            </div>
-                            <div class="w-full bg-dark-card rounded-full h-2">
-                                <div class="bg-gradient-to-r from-aurora-green to-aurora-blue h-2 rounded-full progress-bar" style="width: 86%"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-2">
-                                <span>Kafka event verification</span>
-                                <span class="text-gray-400 text-sm">Experienced</span>
-                            </div>
-                            <div class="w-full bg-dark-card rounded-full h-2">
-                                <div class="bg-gradient-to-r from-aurora-blue to-aurora-purple h-2 rounded-full progress-bar" style="width: 84%"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-2">
-                                <span>Jenkins / Jenkinsfile (regression cron)</span>
-                                <span class="text-gray-400 text-sm">Advanced</span>
-                            </div>
-                            <div class="w-full bg-dark-card rounded-full h-2">
-                                <div class="bg-gradient-to-r from-aurora-purple to-aurora-pink h-2 rounded-full progress-bar" style="width: 88%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Performance & Monitoring -->
-                <div>
-                    <h3 class="text-xl font-semibold mb-4 text-aurora-pink">Performance &amp; Monitoring</h3>
-                    <div class="space-y-4">
-                        <div>
-                            <div class="flex justify-between mb-2">
-                                <span>K6 performance testing (JavaScript)</span>
-                                <span class="text-gray-400 text-sm">Experienced</span>
-                            </div>
-                            <div class="w-full bg-dark-card rounded-full h-2">
-                                <div class="bg-gradient-to-r from-aurora-green to-aurora-blue h-2 rounded-full progress-bar" style="width: 85%"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-2">
-                                <span>Grafana alerts (Python scripts, 50+ maintained)</span>
-                                <span class="text-gray-400 text-sm">Advanced</span>
-                            </div>
-                            <div class="w-full bg-dark-card rounded-full h-2">
-                                <div class="bg-gradient-to-r from-aurora-blue to-aurora-purple h-2 rounded-full progress-bar" style="width: 90%"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-2">
-                                <span>New Relic (logs &amp; root-cause analysis)</span>
-                                <span class="text-gray-400 text-sm">Advanced</span>
-                            </div>
-                            <div class="w-full bg-dark-card rounded-full h-2">
-                                <div class="bg-gradient-to-r from-aurora-purple to-aurora-pink h-2 rounded-full progress-bar" style="width: 88%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Platforms & Devices -->
-                <div>
-                    <h3 class="text-xl font-semibold mb-4 text-aurora-green">Platforms &amp; Devices</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-aurora-green/10 text-aurora-green border border-aurora-green/30 rounded-full text-sm">iOS / iPhone</span>
-                        <span class="px-3 py-1 bg-aurora-blue/10 text-aurora-blue border border-aurora-blue/30 rounded-full text-sm">Android</span>
-                        <span class="px-3 py-1 bg-aurora-purple/10 text-aurora-purple border border-aurora-purple/30 rounded-full text-sm">Roku</span>
-                        <span class="px-3 py-1 bg-aurora-pink/10 text-aurora-pink border border-aurora-pink/30 rounded-full text-sm">Web</span>
-                        <span class="px-3 py-1 bg-dark-card border border-dark-border rounded-full text-sm text-gray-300">Apple TV</span>
-                        <span class="px-3 py-1 bg-dark-card border border-dark-border rounded-full text-sm text-gray-300">Amazon Fire TV</span>
-                        <span class="px-3 py-1 bg-dark-card border border-dark-border rounded-full text-sm text-gray-300">Android TV</span>
-                        <span class="px-3 py-1 bg-dark-card border border-dark-border rounded-full text-sm text-gray-300">Xcode device logs</span>
-                    </div>
-                </div>
-
-                <!-- AI & Modern QA -->
-                <div>
-                    <h3 class="text-xl font-semibold mb-4 text-aurora-blue">AI &amp; Modern QA</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-dark-card border border-dark-border rounded-full text-sm text-gray-300">Cursor</span>
-                        <span class="px-3 py-1 bg-dark-card border border-dark-border rounded-full text-sm text-gray-300">GitHub Copilot</span>
-                        <span class="px-3 py-1 bg-dark-card border border-dark-border rounded-full text-sm text-gray-300">ChatGPT</span>
-                        <span class="px-3 py-1 bg-dark-card border border-dark-border rounded-full text-sm text-gray-300">Windsurf</span>
-                        <span class="px-3 py-1 bg-dark-card border border-dark-border rounded-full text-sm text-gray-300">Ollama (self-hosted LLM)</span>
-                        <span class="px-3 py-1 bg-dark-card border border-dark-border rounded-full text-sm text-gray-300">Kusho.AI</span>
-                        <span class="px-3 py-1 bg-dark-card border border-dark-border rounded-full text-sm text-gray-300">ReportPortal</span>
-                        <span class="px-3 py-1 bg-dark-card border border-dark-border rounded-full text-sm text-gray-300">GumLoop</span>
-                        <span class="px-3 py-1 bg-dark-card border border-dark-border rounded-full text-sm text-gray-300">Power Automate</span>
-                    </div>
-                </div>
-
-                <!-- Tools -->
-                <div>
-                    <h3 class="text-xl font-semibold mb-4 text-aurora-purple">Tools</h3>
-                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                        <div class="bg-dark-card p-4 rounded-lg text-center card-hover">
-                            <i class="fab fa-docker text-2xl mb-2 text-aurora-green"></i>
-                            <p>Docker</p>
-                        </div>
-                        <div class="bg-dark-card p-4 rounded-lg text-center card-hover">
-                            <i class="fab fa-git-alt text-2xl mb-2 text-aurora-blue"></i>
-                            <p>Git</p>
-                        </div>
-                        <div class="bg-dark-card p-4 rounded-lg text-center card-hover">
-                            <i class="fas fa-server text-2xl mb-2 text-aurora-purple"></i>
-                            <p>Jenkins</p>
-                        </div>
-                        <div class="bg-dark-card p-4 rounded-lg text-center card-hover">
-                            <i class="fas fa-chart-area text-2xl mb-2 text-aurora-pink"></i>
-                            <p>Grafana</p>
-                        </div>
-                        <div class="bg-dark-card p-4 rounded-lg text-center card-hover">
-                            <i class="fas fa-paper-plane text-2xl mb-2 text-aurora-green"></i>
-                            <p>Postman</p>
-                        </div>
-                        <div class="bg-dark-card p-4 rounded-lg text-center card-hover">
-                            <i class="fas fa-stream text-2xl mb-2 text-aurora-blue"></i>
-                            <p>Kafka</p>
-                        </div>
-                        <div class="bg-dark-card p-4 rounded-lg text-center card-hover">
-                            <i class="fas fa-bolt text-2xl mb-2 text-aurora-purple"></i>
-                            <p>K6</p>
-                        </div>
-                        <div class="bg-dark-card p-4 rounded-lg text-center card-hover">
-                            <i class="fas fa-infinity text-2xl mb-2 text-aurora-pink"></i>
-                            <p>CI/CD</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="py-20 bg-dark-card/30">
-        <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-bold text-center mb-12 gradient-text">Services</h2>
-            <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
-                <div class="bg-dark-card p-6 rounded-lg card-hover text-center">
-                    <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-aurora-green to-aurora-blue flex items-center justify-center">
-                        <i class="fas fa-mobile-alt text-2xl text-dark-bg"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-3">Mobile Testing</h3>
-                    <p class="text-gray-400">
-                        Native and hybrid apps on iOS and Android with Appium, device-log analysis (Xcode, Charles Proxy), and 150+ automated scripts across multiple applications.
-                    </p>
-                </div>
-
-                <div class="bg-dark-card p-6 rounded-lg card-hover text-center">
-                    <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-aurora-blue to-aurora-purple flex items-center justify-center">
-                        <i class="fas fa-globe text-2xl text-dark-bg"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-3">Web Testing</h3>
-                    <p class="text-gray-400">
-                        UI and regression coverage with Playwright (Java) and Selenium — including migration from flaky legacy suites to stable, maintainable automation.
-                    </p>
-                </div>
-
-                <div class="bg-dark-card p-6 rounded-lg card-hover text-center">
-                    <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-aurora-purple to-aurora-pink flex items-center justify-center">
-                        <i class="fas fa-plug text-2xl text-dark-bg"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-3">API Testing</h3>
-                    <p class="text-gray-400">
-                        REST validation in microservices with RestAssured and Kotlin/Spring Boot, Postman collections, Charles Proxy + VPN checks, and SQL-backed subscription verification.
-                    </p>
-                </div>
-
-                <div class="bg-dark-card p-6 rounded-lg card-hover text-center">
-                    <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-aurora-pink to-aurora-green flex items-center justify-center">
-                        <i class="fas fa-tv text-2xl text-dark-bg"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-3">OTT &amp; Device Testing</h3>
-                    <p class="text-gray-400">
-                        Manual and automated coverage on Roku, Apple TV, Fire TV, and Android TV — subscription entitlements and SM flows validated in QA and production.
-                    </p>
-                </div>
-
-                <div class="bg-dark-card p-6 rounded-lg card-hover text-center">
-                    <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-aurora-green to-aurora-purple flex items-center justify-center">
-                        <i class="fas fa-project-diagram text-2xl text-dark-bg"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-3">E2E &amp; BDD Automation</h3>
-                    <p class="text-gray-400">
-                        Reliable end-to-end suites with Cucumber and Gherkin, aligned with feature teams for readable scenarios and regression-ready pipelines.
-                    </p>
-                </div>
-
-                <div class="bg-dark-card p-6 rounded-lg card-hover text-center">
-                    <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-aurora-blue to-aurora-pink flex items-center justify-center">
-                        <i class="fas fa-exchange-alt text-2xl text-dark-bg"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-3">Integration &amp; Contract Testing</h3>
-                    <p class="text-gray-400">
-                        WireMock and Pact for service contracts, plus Docker and Testcontainers setups with Kafka event verification for messaging-heavy flows.
-                    </p>
-                </div>
-
-                <div class="bg-dark-card p-6 rounded-lg card-hover text-center">
-                    <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-aurora-green to-aurora-blue flex items-center justify-center">
-                        <i class="fas fa-tachometer-alt text-2xl text-dark-bg"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-3">Performance Testing</h3>
-                    <p class="text-gray-400">
-                        Load and performance runners scripted with K6 (JavaScript) to catch bottlenecks before release and support capacity planning.
-                    </p>
-                </div>
-
-                <div class="bg-dark-card p-6 rounded-lg card-hover text-center">
-                    <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-aurora-blue to-aurora-purple flex items-center justify-center">
-                        <i class="fas fa-bell text-2xl text-dark-bg"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-3">Monitoring &amp; Observability</h3>
-                    <p class="text-gray-400">
-                        50+ Grafana alerts maintained via Python scripts, New Relic log analysis for RCA, and proactive support-officer monitoring of regressions and production signals.
-                    </p>
-                </div>
-
-                <div class="bg-dark-card p-6 rounded-lg card-hover text-center">
-                    <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-aurora-purple to-aurora-pink flex items-center justify-center">
-                        <i class="fas fa-clipboard-check text-2xl text-dark-bg"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-3">QA Process &amp; Documentation</h3>
-                    <p class="text-gray-400">
-                        Test case maintenance, Jenkins regression scheduling, cross-team collaboration with engineering and DevOps, and AI-assisted workflows (Copilot, Cursor, ReportPortal).
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Blog Section -->
-    <section id="blog" class="py-20">
-        <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-bold text-center mb-12 gradient-text">My Latest Articles</h2>
-            <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
-                <article class="bg-dark-card rounded-lg overflow-hidden card-hover">
-                    <div class="h-48 bg-gradient-to-br from-aurora-green to-aurora-blue"></div>
-                    <div class="p-6">
-                        <div class="text-sm text-gray-400 mb-2">May 26, 2026</div>
-                        <h3 class="text-xl font-semibold mb-3">Scoring my automation scripts using GitHub CoPilot</h3>
-                        <p class="text-gray-400 mb-4">
-                            Out of curiosity I used GitHub Copilot as an AI peer-reviewer to bring an Agentic QA approach to my test automation workflow. Instead of .....
-                        <a href="https://medium.com/@ankita.mahadik./agentic-qa-scoring-my-automation-scripts-using-github-copilot-7a7102978156" class="text-aurora-green hover:text-aurora-blue transition">
-                            Read More →
-                        </a>
-                    </div>
-                </article>
-
-                <article class="bg-dark-card rounded-lg overflow-hidden card-hover">
-                    <div class="h-48 bg-gradient-to-br from-aurora-blue to-aurora-purple"></div>
-                    <div class="p-6">
-                        <div class="text-sm text-gray-400 mb-2">May 12, 2026</div>
-                        <h3 class="text-xl font-semibold mb-3">AI Evals: Where QA Skills Meet Generative AI</h3>
-                        <p class="text-gray-400 mb-4">
-                            I have been following the concept of AI Evals since last year and the more I get to know about it the more I lean towards the perspective….that’s QA work. Yes it is for .....
-                        </p>
-                        <a href="https://medium.com/@ankita.mahadik./ai-evals-where-qa-skills-meet-generative-ai-f35fc706e6c8" class="text-aurora-green hover:text-aurora-blue transition">
-                            Read More →
-                        </a>
-                    </div>
-                </article>
-
-                <article class="bg-dark-card rounded-lg overflow-hidden card-hover">
-                    <div class="h-48 bg-gradient-to-br from-aurora-purple to-aurora-pink"></div>
-                    <div class="p-6">
-                        <div class="text-sm text-gray-400 mb-2">Mar 16, 2026</div>
-                        <h3 class="text-xl font-semibold mb-3">How I leveraged Cursor Skills for SDET stakeholder reporting metrics</h3>
-                        <p class="text-gray-400 mb-4">
-                            I work as an SDET in a micro-services architecture project, usually testing backend implementation and sometimes e2e flows. In the last few weeks .....
-                        </p>
-                        <a href="https://medium.com/@ankita.mahadik./how-i-leveraged-cursor-skills-for-sdet-stakeholder-reporting-metrics-aff1f485ded4" class="text-aurora-green hover:text-aurora-blue transition">
-                            Read More →
-                        </a>
-                    </div>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-dark-card/30">
-    <div class="container mx-auto px-6">
-        <h2 class="text-4xl font-bold text-center mb-12 gradient-text">Contact Me Via</h2>
-
-        <div class="max-w-4xl mx-auto">
-            
-            <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-8 mb-8">
-
-                <!-- Email -->
-                <div class="flex items-center space-x-4">
-                    <div class="w-12 h-12 rounded-full bg-gradient-to-br from-aurora-green to-aurora-blue flex items-center justify-center">
-                        <i class="fas fa-envelope text-dark-bg"></i>
-                    </div>
-                    <div>
-                        <p class="text-gray-400">Email</p>
-                        <p>ankita010899@gmail.com</p>
-                    </div>
-                </div>
-
-                <!-- Phone -->
-                <div class="flex items-center space-x-4">
-                    <div class="w-12 h-12 rounded-full bg-gradient-to-br from-aurora-blue to-aurora-purple flex items-center justify-center">
-                        <i class="fas fa-phone text-dark-bg"></i>
-                    </div>
-                    <div>
-                        <p class="text-gray-400">Phone</p>
-                        <p>(+48)506 047 188</p>
-                        <p>(+91)9619848760</p>
-                    </div>
-                </div>
-
-                <!-- Location -->
-                <div class="flex items-center space-x-4">
-                    <div class="w-12 h-12 rounded-full bg-gradient-to-br from-aurora-purple to-aurora-pink flex items-center justify-center">
-                        <i class="fas fa-map-marker-alt text-dark-bg"></i>
-                    </div>
-                    <div>
-                        <p class="text-gray-400">Location</p>
-                        <p>Warsaw, Poland</p>
-                    </div>
-                </div>
-
-            </div>
-
+        <div class="bg-slate-900 p-6 rounded-xl">
+            <h3 class="text-3xl font-bold text-cyan-400">Medical</h3>
+            <p>Device QA</p>
         </div>
     </div>
 </section>
 
-    <!-- Footer -->
-    <footer class="py-8 border-t border-dark-border">
-        <div class="container mx-auto px-6 text-center">
-            <div class="mb-4">
-                <a href="https://github.com/ankita010899" class="text-2xl hover:text-aurora-green transition"><i class="fab fa-github"></i></a>
-                <a href="http://www.linkedin.com/in/ankita-mahadik-1506" class="text-2xl hover:text-aurora-blue transition"><i class="fab fa-linkedin"></i></a>
-                <a href="https://medium.com/@ankita.mahadik." target="_blank" class="text-2xl hover:text-aurora-green transition">Medium</a>
-            </div>
-            <p class="text-gray-400">
-                © 2024 Alex Aurora. Built with
-                <a href="https://github.com/OSSPhilippines/freefolio" class="text-aurora-green hover:text-aurora-blue transition">
-                    Freefolio
-                </a>
-            </p>
+<section class="py-16 px-8 max-w-6xl mx-auto">
+    <h2 class="text-4xl font-bold mb-8">Experience</h2>
+
+    <div class="mb-8">
+        <h3 class="text-2xl font-semibold">Siemens Healthineers</h3>
+        <p class="text-cyan-400">Senior Software Verification & Validation Engineer | Sep 2024 - Present</p>
+        <ul class="list-disc pl-6 mt-3 text-gray-300">
+            <li>Owned V&V activities for Ultrasound Imaging products.</li>
+            <li>Executed 2000–3000+ test cases per quarterly release.</li>
+            <li>Tracked 250+ defects improving product quality.</li>
+            <li>Performed Security Hotfix and STIG validation testing.</li>
+            <li>Worked with R&D, Product, Clinical and Security teams.</li>
+        </ul>
+    </div>
+
+    <div class="mb-8">
+        <h3 class="text-2xl font-semibold">NCR Voyix</h3>
+        <p class="text-cyan-400">Software Quality Engineer II | Sep 2022 - Sep 2024</p>
+        <ul class="list-disc pl-6 mt-3 text-gray-300">
+            <li>Developed mobile automation using Katalon Studio.</li>
+            <li>Performed Functional, Sanity and Regression Testing.</li>
+            <li>Created test strategies and QA sign-off reports.</li>
+        </ul>
+    </div>
+
+    <div>
+        <h3 class="text-2xl font-semibold">LTIMindtree</h3>
+        <p class="text-cyan-400">Senior QA Test Engineer | May 2019 - Aug 2022</p>
+        <ul class="list-disc pl-6 mt-3 text-gray-300">
+            <li>Tested Paramount+ applications across Android, iOS, Web and CTV.</li>
+            <li>Worked on Apple TV, Roku, Fire TV and Android TV platforms.</li>
+            <li>Built and maintained Selenium automation frameworks.</li>
+        </ul>
+    </div>
+</section>
+
+<section class="py-16 px-8 max-w-6xl mx-auto">
+    <h2 class="text-4xl font-bold mb-8">Technical Skills</h2>
+
+    <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-slate-900 p-6 rounded-xl">
+            <h3 class="font-bold mb-3">Automation</h3>
+            <p>Selenium, Katalon Studio, TestNG, Java, Python</p>
         </div>
-    </footer>
 
-    <script>
-        // Mobile menu toggle
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobileMenu');
-            menu.classList.toggle('hidden');
-        }
+        <div class="bg-slate-900 p-6 rounded-xl">
+            <h3 class="font-bold mb-3">Testing</h3>
+            <p>Functional, Regression, Smoke, UAT, Exploratory, API Testing</p>
+        </div>
 
-        // Close mobile menu when clicking on a link
-        document.querySelectorAll('#mobileMenu a').forEach(link => {
-            link.addEventListener('click', () => {
-                document.getElementById('mobileMenu').classList.add('hidden');
-            });
-        });
+        <div class="bg-slate-900 p-6 rounded-xl">
+            <h3 class="font-bold mb-3">Tools</h3>
+            <p>JIRA, Azure DevOps, TFS, TestRail, PractiTest, Confluence, Postman</p>
+        </div>
+    </div>
+</section>
 
-        // Add animation on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
-        };
+<section class="py-16 px-8 max-w-6xl mx-auto">
+    <h2 class="text-4xl font-bold mb-8">Domains</h2>
+    <div class="flex flex-wrap gap-3">
+        <span class="bg-cyan-700 px-4 py-2 rounded">Medical Technology</span>
+        <span class="bg-cyan-700 px-4 py-2 rounded">Mobile Banking</span>
+        <span class="bg-cyan-700 px-4 py-2 rounded">Payments</span>
+        <span class="bg-cyan-700 px-4 py-2 rounded">Media & OTT</span>
+        <span class="bg-cyan-700 px-4 py-2 rounded">Web Applications</span>
+    </div>
+</section>
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate-slide-up');
-                }
-            });
-        }, observerOptions);
+<section class="py-16 px-8 max-w-6xl mx-auto">
+    <h2 class="text-4xl font-bold mb-8">Contact</h2>
+    <p>Email: ashishpjr92@gmail.com</p>
+    <p>Phone: +91 8277268948</p>
+    <p>Location: Bengaluru, Karnataka, India</p>
+</section>
 
-        // Observe sections for animation
-        document.querySelectorAll('section').forEach(section => {
-            observer.observe(section);
-        });
-
-        // Smooth scroll for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-    </script>
 </body>
 </html>
